@@ -11,7 +11,7 @@ $wgExtensionCredits['parserhook'][] = array(
 	'url' => 'http://meta.wikimedia.org/wiki/ParserFunctions',
 	'author' => 'Tim Starling',
 	'description' => 'Enhance parser with logical functions',
-	'descriptionmsg' => 'pfunc_desc',
+	'descriptionmsg' => 'gadgets_desc',
 );
 
 $wgExtensionMessagesFiles['ParserFunctions'] = dirname(__FILE__) . '/ParserFunctions.i18n.php';
