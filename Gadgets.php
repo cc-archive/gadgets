@@ -48,7 +48,7 @@ function wfSetupGadgets() {
 }
 
 function wfGadgetsLanguagesGetMagic( &$magicWords, $langCode ) {
-	require_once( dirname( __FILE__ ) . '/ParserFunctions.i18n.magic.php' );
+	require_once( dirname( __FILE__ ) . '/Gadgets.i18n.magic.php' );
 	foreach( efGadgetsWords( $langCode ) as $word => $trans )
 		$magicWords[$word] = $trans;
 	return true;
