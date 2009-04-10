@@ -49,7 +49,7 @@ function wfSetupGadgets() {
 
 function wfGadgetsLanguagesGetMagic( &$magicWords, $langCode ) {
 	require_once( dirname( __FILE__ ) . '/ParserFunctions.i18n.magic.php' );
-	foreach( efParserFunctionsWords( $langCode ) as $word => $trans )
+	foreach( efGadgetsWords( $langCode ) as $word => $trans )
 		$magicWords[$word] = $trans;
 	return true;
 }

@@ -6,7 +6,7 @@
  * @param string $lang Language code
  * @return array
  */
-function efParserFunctionsWords( $lang ) {
+function efGadgetsWords( $lang ) {
 	$words = array();
 
 	/**
