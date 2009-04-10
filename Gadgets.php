@@ -24,9 +24,21 @@ class ExtGadgets {
 		return true;
 	}
 
-	function gadget(&$parser) {
-		return array('<script>alert("hi!");</script>', noparse=>true, isHTML=>true);
+	function gadget(&$parser, $argument='') {
+		/* Remove leading and trailing whitespace. */
+		$argument = trim($argument);
+
+		/* Require $wgGadgetsAllowed  at all */
+		if (! isset($wgGadgetsAllowed)) {
+			return "'''You tried to use a gadget but have not declared $wgGadgetsAllowed.'''";
+		}
+		if (! isset($wgGadgetsAllowed[$argument])) {
+			return "'''You tried to use an undefined gadget.'''";
+		}
+		return array($wgGadgetsAllowed[$argument],
+			     noparse=>true, isHTML=>true);
 	}
+
 
 }
 
