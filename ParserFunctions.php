@@ -14,7 +14,7 @@ $wgExtensionCredits['parserhook'][] = array(
 	'descriptionmsg' => 'gadgets_desc',
 );
 
-$wgExtensionMessagesFiles['Gadgets'] = dirname(__FILE__) . '/ParserFunctions.i18n.php';
+$wgExtensionMessagesFiles['Gadgets'] = dirname(__FILE__) . '/Gadgets.i18n.php';
 $wgHooks['LanguageGetMagic'][]       = 'wfGadgetsLanguagesGetMagic';
 
 class ExtParserFunctions {
