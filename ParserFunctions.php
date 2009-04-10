@@ -46,8 +46,13 @@ class ExtParserFunctions {
 		$parser->setFunctionHook( 'timel', array( &$this, 'localTime' ) );
 		$parser->setFunctionHook( 'rel2abs', array( &$this, 'rel2abs' ) );
 		$parser->setFunctionHook( 'titleparts', array( &$this, 'titleparts' ) );
+		$parser->setFunctionHook( 'gadget', array(&$this, 'gadget') );
 
 		return true;
+	}
+
+	function gadget(&$parser) {
+		return '<script>alert("hi!");</script>';
 	}
 
 	function clearState(&$parser) {
