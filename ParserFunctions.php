@@ -14,8 +14,8 @@ $wgExtensionCredits['parserhook'][] = array(
 	'descriptionmsg' => 'gadgets_desc',
 );
 
-$wgExtensionMessagesFiles['ParserFunctions'] = dirname(__FILE__) . '/ParserFunctions.i18n.php';
-$wgHooks['LanguageGetMagic'][]       = 'wfParserFunctionsLanguageGetMagic';
+$wgExtensionMessagesFiles['Gadgets'] = dirname(__FILE__) . '/ParserFunctions.i18n.php';
+$wgHooks['LanguageGetMagic'][]       = 'wfGadgetsLanguagesGetMagic';
 
 class ExtParserFunctions {
 	function registerParser( &$parser ) {
@@ -47,7 +47,7 @@ function wfSetupGadgets() {
 
 }
 
-function wfParserFunctionsLanguageGetMagic( &$magicWords, $langCode ) {
+function wfGadgetsLanguagesGetMagic( &$magicWords, $langCode ) {
 	require_once( dirname( __FILE__ ) . '/ParserFunctions.i18n.magic.php' );
 	foreach( efParserFunctionsWords( $langCode ) as $word => $trans )
 		$magicWords[$word] = $trans;
