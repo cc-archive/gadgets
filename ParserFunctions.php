@@ -4,7 +4,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'This file is a MediaWiki extension, it is not a valid entry point' );
 }
 
-$wgExtensionFunctions[] = 'wfSetupParserFunctions';
+$wgExtensionFunctions[] = 'wfSetupGadgets';
 $wgExtensionCredits['parserhook'][] = array(
 	'name' => 'Gadgets',
 	'version' => '1.1.1',
@@ -30,7 +30,7 @@ class ExtParserFunctions {
 
 }
 
-function wfSetupParserFunctions() {
+function wfSetupGadgets() {
 	global $wgParser, $wgExtParserFunctions, $wgHooks;
 
 	$wgExtParserFunctions = new ExtParserFunctions;
