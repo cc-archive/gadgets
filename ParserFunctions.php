@@ -17,7 +17,7 @@ $wgExtensionCredits['parserhook'][] = array(
 $wgExtensionMessagesFiles['Gadgets'] = dirname(__FILE__) . '/Gadgets.i18n.php';
 $wgHooks['LanguageGetMagic'][]       = 'wfGadgetsLanguagesGetMagic';
 
-class ExtParserFunctions {
+class ExtGadgets {
 	function registerParser( &$parser ) {
 		$parser->setFunctionHook( 'gadget', array(&$this, 'gadget') );
 
@@ -33,7 +33,7 @@ class ExtParserFunctions {
 function wfSetupGadgets() {
 	global $wgParser, $wgExtParserFunctions, $wgHooks;
 
-	$wgExtParserFunctions = new ExtParserFunctions;
+	$wgExtParserFunctions = new ExtGadgets;
 
 	// Check for SFH_OBJECT_ARGS capability
 	if ( defined( 'MW_SUPPORTS_PARSERFIRSTCALLINIT' ) ) {
