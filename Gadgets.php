@@ -31,18 +31,18 @@ class ExtGadgets {
 }
 
 function wfSetupGadgets() {
-	global $wgParser, $wgExtParserFunctions, $wgHooks;
+	global $wgParser, $wgExtGadgets, $wgHooks;
 
-	$wgExtParserFunctions = new ExtGadgets;
+	$wgExtGadgets = new ExtGadgets;
 
 	// Check for SFH_OBJECT_ARGS capability
 	if ( defined( 'MW_SUPPORTS_PARSERFIRSTCALLINIT' ) ) {
-		$wgHooks['ParserFirstCallInit'][] = array( &$wgExtParserFunctions, 'registerParser' );
+		$wgHooks['ParserFirstCallInit'][] = array( &$wgExtGadgets, 'registerParser' );
 	} else {
 		if ( class_exists( 'StubObject' ) && !StubObject::isRealObject( $wgParser ) ) {
 			$wgParser->_unstub();
 		}
-		$wgExtParserFunctions->registerParser( $wgParser );
+		$wgExtGadgets->registerParser( $wgParser );
 	}
 
 }
