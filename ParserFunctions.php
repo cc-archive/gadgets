@@ -6,11 +6,11 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 
 $wgExtensionFunctions[] = 'wfSetupParserFunctions';
 $wgExtensionCredits['parserhook'][] = array(
-	'name' => 'ParserFunctions',
+	'name' => 'Gadgets',
 	'version' => '1.1.1',
-	'url' => 'http://meta.wikimedia.org/wiki/ParserFunctions',
-	'author' => 'Tim Starling',
-	'description' => 'Enhance parser with logical functions',
+	'url' => 'http://code.creativecommons.org/viewgit?p=gadgets',
+	'author' => 'Asheesh Laroia (built on top of ParserFunctions by Tim Starling)',
+	'description' => 'Add tested-safe gadgets to the wiki',
 	'descriptionmsg' => 'gadgets_desc',
 );
 
