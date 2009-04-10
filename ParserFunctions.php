@@ -52,7 +52,7 @@ class ExtParserFunctions {
 	}
 
 	function gadget(&$parser) {
-		return '<script>alert("hi!");</script>';
+		return array('<script>alert("hi!");</script>', noparse=>true, isHTML=>true);
 	}
 
 	function clearState(&$parser) {
