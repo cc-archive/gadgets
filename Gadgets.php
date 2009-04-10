@@ -25,12 +25,13 @@ class ExtGadgets {
 	}
 
 	function gadget(&$parser, $argument='') {
+		global $wgGadgetsAllowed;
 		/* Remove leading and trailing whitespace. */
 		$argument = trim($argument);
 
 		/* Require $wgGadgetsAllowed  at all */
 		if (! isset($wgGadgetsAllowed)) {
-			return "'''You tried to use a gadget but have not declared $wgGadgetsAllowed.'''";
+			return "'''You tried to use a gadget but have not declared" . '$wgGadgetsAllowed' . "'''";
 		}
 		if (! isset($wgGadgetsAllowed[$argument])) {
 			return "'''You tried to use an undefined gadget.'''";
