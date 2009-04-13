@@ -1,0 +1,16 @@
+== Installation =
+
+include_once("$IP/extensions/gadgets/Gadgets.php");
+
+== Configuration ==
+
+$wgGadgetsAllowed = array();
+$wgGadgetsAllowed['end_of_days'] = 'Their <blink>tags</blink> shall <blink>blink</blink> until the end of days.';
+
+== Use on the wiki ==
+
+Now, on a wiki page, you can write:
+
+{{#gadget: end_of_days}}
+
+and get back the raw HTML message above.
